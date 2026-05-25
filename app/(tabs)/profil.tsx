@@ -3,7 +3,6 @@ import { View, Text, ScrollView, StyleSheet, TouchableOpacity, SafeAreaView, Ale
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Colors } from '@/constants/Colors';
-import { useAuth } from '@/hooks/useAuth';
 
 const MOCK_STATS = {
   totalWorkouts: 24,
@@ -43,9 +42,9 @@ const MENU_SECTIONS = [
 ];
 
 export default function ProfilScreen() {
-  const { session, signOut } = useAuth();
-  const userName = session?.user?.user_metadata?.full_name ?? 'Utilisateur';
-  const userEmail = session?.user?.email ?? '';
+  const userName = 'Utilisateur';
+  const userEmail = 'votre@email.com';
+  const signOut = () => {};
 
   const handleSignOut = () => {
     Alert.alert(
